@@ -15,6 +15,6 @@ export const site = {
   /** "oquefalta.gr1618.io", for "links start with …"; null when unknown. */
   host: siteUrl ? new URL(siteUrl).host : null,
   siteUrl,
-  /** Date of the current Privacy and Terms text. */
-  legalUpdatedAt: '15 de novembro de 2026',
+  /** Date of the current Privacy and Terms text (ISO; formatted in each language). */
+  legalUpdatedAt: '2026-11-15',
 } as const;

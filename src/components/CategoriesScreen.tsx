@@ -1,17 +1,21 @@
 'use client';
 
-import Link from 'next/link';
-import {useRouter} from 'next/navigation';
+import {useTranslations} from 'next-intl';
 import {useMemo, useState} from 'react';
+import {Link, useRouter} from '@/i18n/navigation';
 import {api, type CategoryDraft} from '@/lib/api';
-import {ICONS, ICON_KEYS} from '@/lib/icons';
+import {ICON_KEYS} from '@/lib/icons';
 import {useList} from '@/lib/use-list';
-import {errorMessage} from './ListScreen';
+import {useErrorMessage} from './ListScreen';
 import {CategoryIcon, Icon, paths} from './ui';
 
 type Row = CategoryDraft & {key: string; isOther: boolean};
 
 export function CategoriesScreen({slug}: {slug: string}) {
+  const t = useTranslations('Categories');
+  const iconLabels = useTranslations('Icons');
+  const common = useTranslations('Common');
+  const errorMessage = useErrorMessage();
   const router = useRouter();
   const {state} = useList(slug);
   const [edited, setRows] = useState<Row[] | null>(null);
@@ -32,9 +36,9 @@ export function CategoriesScreen({slug}: {slug: string}) {
   if (state.status === 'not_found' || state.status === 'error') {
     return (
       <main className="screen">
-        <p className="empty">Não deu para abrir as categorias desta lista.</p>
+        <p className="empty">{t('loadError')}</p>
         <Link className="primary" href={back} style={{margin: '0 24px', width: 'auto'}}>
-          Voltar para a lista
+          {t('backToList')}
         </Link>
       </main>
     );
@@ -58,7 +62,7 @@ export function CategoriesScreen({slug}: {slug: string}) {
     if (!rows || rows.length >= 30) return;
     const key = `new-${Date.now()}`;
     const next = [...rows];
-    next.splice(movable, 0, {key, id: null, name: 'Nova categoria', icon: 'casa', isOther: false});
+    next.splice(movable, 0, {key, id: null, name: t('newCategory'), icon: 'casa', isOther: false});
     setRows(next);
     setPicking(key);
   }
@@ -67,7 +71,7 @@ export function CategoriesScreen({slug}: {slug: string}) {
     if (!rows) return;
     const clean = rows.map((r) => ({...r, name: r.name.trim().slice(0, 40)}));
     if (clean.some((r) => !r.name)) {
-      setError('Toda categoria precisa de um nome.');
+      setError(t('nameRequired'));
       return;
     }
     setSaving(true);
@@ -86,19 +90,19 @@ export function CategoriesScreen({slug}: {slug: string}) {
       <div className="header" style={{paddingLeft: 12}}>
         <Link href={back} className="linkButton" style={{display: 'inline-flex', alignItems: 'center', gap: 4, alignSelf: 'flex-start', textDecoration: 'none', padding: '0 8px'}}>
           <Icon d={paths.chevronLeft} size={20} strokeWidth={2} />
-          Voltar para a lista
+          {t('backToList')}
         </Link>
         <div style={{paddingLeft: 12, display: 'flex', flexDirection: 'column', gap: 6}}>
-          <h1 className="title">Categorias</h1>
+          <h1 className="title">{t('title')}</h1>
           <p style={{margin: 0, fontSize: 15, lineHeight: '23px', color: 'var(--ink-muted)'}}>
-            A lista segue esta ordem. Deixe na ordem dos corredores do seu mercado. Toque no ícone para trocar.
+            {t('intro')}
           </p>
         </div>
       </div>
 
       <div className="content" style={{gap: 12, paddingTop: 8}}>
         {rows === null ? (
-          <p className="empty">Carregando…</p>
+          <p className="empty">{common('loading')}</p>
         ) : (
           <div className="card">
             {rows.map((r, index) => (
@@ -107,24 +111,24 @@ export function CategoriesScreen({slug}: {slug: string}) {
                   <button
                     type="button"
                     className="catIcon"
-                    aria-label={`Trocar ícone de ${r.name}`}
+                    aria-label={t('changeIcon', {name: r.name})}
                     aria-expanded={picking === r.key}
                     onClick={() => setPicking(picking === r.key ? null : r.key)}
                   >
                     <CategoryIcon icon={r.icon} size={22} />
                   </button>
                   <label htmlFor={`cat-${r.key}`} className="visually-hidden">
-                    Nome da categoria
+                    {t('nameLabel')}
                   </label>
                   <input id={`cat-${r.key}`} className="catName" value={r.name} maxLength={40} onChange={(e) => update(r.key, {name: e.target.value})} />
-                  <button type="button" className="iconButton" style={{width: 40}} aria-label={`Subir ${r.name}`} disabled={r.isOther || index === 0} onClick={() => move(index, -1)}>
+                  <button type="button" className="iconButton" style={{width: 40}} aria-label={t('moveUp', {name: r.name})} disabled={r.isOther || index === 0} onClick={() => move(index, -1)}>
                     <Icon d={paths.chevronUp} size={20} strokeWidth={2} />
                   </button>
                   <button
                     type="button"
                     className="iconButton"
                     style={{width: 40}}
-                    aria-label={`Descer ${r.name}`}
+                    aria-label={t('moveDown', {name: r.name})}
                     disabled={r.isOther || index >= movable - 1}
                     onClick={() => move(index, 1)}
                   >
@@ -137,7 +141,7 @@ export function CategoriesScreen({slug}: {slug: string}) {
                       type="button"
                       className="iconButton"
                       style={{width: 40, color: 'var(--ink-muted)'}}
-                      aria-label={`Apagar ${r.name}`}
+                      aria-label={t('delete', {name: r.name})}
                       onClick={() => setRows(rows.filter((x) => x.key !== r.key))}
                     >
                       <Icon d={paths.trash} size={19} />
@@ -147,7 +151,7 @@ export function CategoriesScreen({slug}: {slug: string}) {
                 {picking === r.key && (
                   <div style={{padding: '2px 8px 14px', display: 'flex', flexDirection: 'column', gap: 8}}>
                     <span className="label" style={{fontSize: 11}}>
-                      Escolha um ícone
+                      {t('pickIcon')}
                     </span>
                     <div className="iconGrid">
                       {ICON_KEYS.map((key) => (
@@ -155,7 +159,7 @@ export function CategoriesScreen({slug}: {slug: string}) {
                           key={key}
                           type="button"
                           className="iconChoice"
-                          aria-label={ICONS[key].label}
+                          aria-label={iconLabels(key)}
                           aria-pressed={r.icon === key}
                           onClick={() => {
                             update(r.key, {icon: key});
@@ -174,10 +178,10 @@ export function CategoriesScreen({slug}: {slug: string}) {
         )}
         <button type="button" className="dashed" onClick={addRow} disabled={!rows || rows.length >= 30}>
           <Icon d={paths.plus} size={20} strokeWidth={2} />
-          Nova categoria
+          {t('newCategory')}
         </button>
         <p className="hint" style={{margin: '0 4px'}}>
-          Itens que o app não reconhece vão para Outros. Ao apagar uma categoria, os itens dela também vão para Outros.
+          {t('otherHint', {other: rows?.find((r) => r.isOther)?.name ?? common('otherCategory')})}
         </p>
       </div>
 
@@ -188,7 +192,7 @@ export function CategoriesScreen({slug}: {slug: string}) {
           </p>
         )}
         <button type="button" className="primary" onClick={save} disabled={saving || !rows}>
-          {saving ? 'Salvando…' : 'Salvar categorias'}
+          {saving ? t('saving') : t('save')}
         </button>
       </div>
     </main>

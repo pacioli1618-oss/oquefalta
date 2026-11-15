@@ -50,8 +50,9 @@ export const api = {
   async getList(slug: string) {
     return mapList(await call<RawList>('of_get_list', {p_slug: slug}));
   },
-  async createList(name: string, deviceId: string) {
-    return call<{slug: string}>('of_create_list', {p_name: name, p_device_id: deviceId});
+  /** The locale picks the language of the default categories (they are data, editable later). */
+  async createList(name: string, deviceId: string, locale: string) {
+    return call<{slug: string}>('of_create_list', {p_name: name, p_device_id: deviceId, p_locale: locale});
   },
   renameList(slug: string, name: string) {
     return call<void>('of_rename_list', {p_slug: slug, p_name: name});

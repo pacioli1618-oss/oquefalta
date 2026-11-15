@@ -1,8 +1,10 @@
 'use client';
 
-import Link from 'next/link';
+import {useTranslations} from 'next-intl';
 import {useEffect, useRef, type ReactNode} from 'react';
+import {Link} from '@/i18n/navigation';
 import {iconPath} from '@/lib/icons';
+import {LocaleSwitcher} from './LocaleSwitcher';
 
 /** The "o que falta" symbol: a checklist page on a tomato square (logo concept 1). */
 export function LogoMark({size = 28}: {size?: number}) {
@@ -22,8 +24,9 @@ export function LogoMark({size = 28}: {size?: number}) {
 }
 
 export function Brand({href = '/listas'}: {href?: string}) {
+  const t = useTranslations('Brand');
   return (
-    <Link href={href} className="brand" aria-label="o que falta: minhas listas">
+    <Link href={href} className="brand" aria-label={t('homeLabel')}>
       <LogoMark />
       <span className="wordmark">o que falta</span>
     </Link>
@@ -62,22 +65,24 @@ export const paths = {
   pencil: 'M4 20h4L19 9l-4-4L4 16ZM13.5 6.5l4 4',
 };
 
-/** "Gratuito · Open source · Sem cadastro", the GR1618 Labs endorsement and the legal links. */
+/** "Gratuito · Open source · Sem cadastro", the GR1618 Labs endorsement, the legal links and the language. */
 export function Disclaimers() {
+  const t = useTranslations('Footer');
   return (
     <>
       <p className="fine">
-        Gratuito · Open source · Sem cadastro
+        {t('badges')}
         <br />
-        um experimento GR1618 Labs
+        {t('endorsement')}
       </p>
-      <nav className="legalLinks" aria-label="Sobre o o que falta">
-        <Link href="/sobre">Sobre</Link>
+      <nav className="legalLinks" aria-label={t('linksLabel')}>
+        <Link href="/sobre">{t('about')}</Link>
         <span aria-hidden="true">·</span>
-        <Link href="/privacidade">Privacidade</Link>
+        <Link href="/privacidade">{t('privacy')}</Link>
         <span aria-hidden="true">·</span>
-        <Link href="/termos">Termos</Link>
+        <Link href="/termos">{t('terms')}</Link>
       </nav>
+      <LocaleSwitcher />
     </>
   );
 }
