@@ -8,7 +8,7 @@ if (!supabaseUrl || !supabasePublishableKey) {
 }
 
 // No Supabase Auth: having the list link (slug) is the permission. The browser only calls
-// the public.of_* RPCs; the tables live in the private "ofalta" schema.
+// the public.of_* RPCs; the tables live in the private "oqfalta" schema.
 export const supabase = createClient(supabaseUrl, supabasePublishableKey, {
   auth: {persistSession: false, autoRefreshToken: false, detectSessionInUrl: false},
 });

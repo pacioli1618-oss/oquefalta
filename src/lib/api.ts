@@ -80,7 +80,7 @@ export const api = {
 export function subscribeToList(slug: string, onChange: () => void, onReconnect: () => void) {
   let wasSubscribed = false;
   const channel = supabase
-    .channel(`ofalta:${slug}`)
+    .channel(`oqfalta:${slug}`)
     .on('broadcast', {event: 'changed'}, () => onChange())
     .subscribe((status) => {
       if (status === 'SUBSCRIBED') {

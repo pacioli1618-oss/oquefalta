@@ -4,8 +4,8 @@
 
 export type SavedList = {slug: string; name: string; openedAt: string};
 
-const LISTS_KEY = 'ofalta:lists';
-const DEVICE_KEY = 'ofalta:device';
+const LISTS_KEY = 'oqfalta:lists';
+const DEVICE_KEY = 'oqfalta:device';
 
 function read(key: string): string | null {
   try {

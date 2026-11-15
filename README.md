@@ -14,14 +14,14 @@ Um experimento do GR1618 Labs. Gratuito, open source (AGPL-3.0), sem cadastro.
   renomeadas, reordenadas (na ordem dos corredores do mercado), criadas e apagadas.
 - **Sem conta.** Ter o link é a permissão. As listas abertas ficam salvas no navegador
   ("Minhas listas"); o mesmo link abre a lista em qualquer aparelho.
-- **Ao vivo.** Cada escrita manda um aviso no canal Realtime `ofalta:<slug>` e os aparelhos
+- **Ao vivo.** Cada escrita manda um aviso no canal Realtime `oqfalta:<slug>` e os aparelhos
   abertos recarregam a lista.
 
 ## Stack
 
 Next.js 16 + Supabase (Postgres, Realtime). Mesmo projeto Supabase do QuemLeva, em São Paulo:
 
-- tabelas no schema privado `ofalta`, fora da Data API, com RLS ligada e sem policies;
+- tabelas no schema privado `oqfalta`, fora da Data API, com RLS ligada e sem policies;
 - o navegador só chama as funções `public.of_*` (`supabase/migrations/`), embrulhadas em
   `src/lib/api.ts`;
 - criação de listas limitada por aparelho e por IP (hash com sal, apagado em 1 dia).

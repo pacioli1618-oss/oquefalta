@@ -1,10 +1,10 @@
 # Deploy
 
-Produção na **Vercel** com o **Supabase do QuemLeva** (sa-east-1, São Paulo), schema `ofalta`.
+Produção na **Vercel** com o **Supabase do QuemLeva** (sa-east-1, São Paulo), schema `oqfalta`.
 
 ## 1. Banco
 
-As migrations em `supabase/migrations/` criam o schema `ofalta` e as funções `public.of_*`.
+As migrations em `supabase/migrations/` criam o schema `oqfalta` e as funções `public.of_*`.
 Elas não mexem em nada do QuemLeva (schema `quemleva`, funções `ql_*`).
 
 Realtime: canais públicos permitidos ("private only" desligado), como no QuemLeva.
