@@ -61,7 +61,7 @@
     "markPending": "Volver a poner {name} en la lista"
   },
   "Lists": {
-    "saved": "{count, plural, one {1 lista guardada} other {# listas guardadas}}",
+    "saved": "{count, plural, =0 {0 listas guardadas} one {1 lista guardada} other {# listas guardadas}}",
     "title": "Mis listas",
     "newListLabel": "Nombre de la lista nueva",
     "newListPlaceholder": "lista nueva (ej.: asado)",
