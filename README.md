@@ -3,7 +3,7 @@
 Lista de compras compartilhada, sem cadastro. Você digita o que falta, manda o link para quem faz
 compras com você e os dois veem a mesma lista, ao vivo.
 
-Um experimento do GR1618 Labs. Gratuito, open source (AGPL-3.0), sem cadastro.
+Um experimento do GR1618 Labs. Gratuito, open source (AGPL-3.0), sem cadastro. Em português, espanhol e inglês.
 
 ## Como funciona
 
@@ -14,6 +14,11 @@ Um experimento do GR1618 Labs. Gratuito, open source (AGPL-3.0), sem cadastro.
   renomeadas, reordenadas (na ordem dos corredores do mercado), criadas e apagadas.
 - **Sem conta.** Ter o link é a permissão. As listas abertas ficam salvas no navegador
   ("Minhas listas"); o mesmo link abre a lista em qualquer aparelho.
+- **Três idiomas.** pt-BR, es e en, com next-intl, como no QuemLeva: o link da lista é o mesmo
+  para todos e cada pessoa vê o app no próprio idioma (cookie `OQF_LOCALE` → idioma do navegador →
+  pt-BR). Textos em `messages/<idioma>.json`; `npm run i18n:check` confere se os três batem.
+  As categorias padrão nascem no idioma de quem cria a lista e, depois disso, são dados da lista.
+  A categorização automática reconhece palavras nos três idiomas.
 - **Ao vivo.** Cada escrita manda um aviso no canal Realtime `oqfalta:<slug>` e os aparelhos
   abertos recarregam a lista.
 
@@ -34,7 +39,7 @@ npm install
 npm run dev
 ```
 
-Antes de publicar: `npm run lint`, `npm run typecheck`, `npm test`, `npm run build`.
+Antes de publicar: `npm run lint`, `npm run typecheck`, `npm run i18n:check`, `npm test`, `npm run build`.
 
 ## Publicar
 

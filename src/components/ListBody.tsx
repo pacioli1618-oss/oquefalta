@@ -1,5 +1,6 @@
 'use client';
 
+import {useTranslations} from 'next-intl';
 import {useRef, useState, type ReactNode} from 'react';
 import type {Category, Item} from '@/lib/api';
 import {guessIcon} from '@/lib/categorize';
@@ -8,10 +9,9 @@ import {CategoryIcon, Icon, paths} from './ui';
 export type AddResult = {itemName: string; categoryName: string; itemId: string | null};
 
 /** Pending count label: "FALTAM 5 ITENS". */
-export function countLabel(items: Item[]) {
-  const n = items.filter((i) => !i.done).length;
-  if (n === 0) return items.length ? 'Tudo comprado' : 'Lista nova';
-  return n === 1 ? 'Falta 1 item' : `Faltam ${n} itens`;
+export function useCountLabel() {
+  const t = useTranslations('ListBody');
+  return (items: Item[]) => t('count', {pending: items.filter((i) => !i.done).length, total: items.length});
 }
 
 /** Category for a new item: by guessed icon, else "Outros". */
@@ -40,6 +40,7 @@ export function ListBody({
   busy?: boolean;
   error?: string | null;
 }) {
+  const t = useTranslations('ListBody');
   const [draft, setDraft] = useState('');
   const [last, setLast] = useState<AddResult | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -73,7 +74,7 @@ export function ListBody({
           }}
         >
           <label htmlFor="new-item" className="visually-hidden">
-            Novo item
+            {t('newItem')}
           </label>
           <input
             id="new-item"
@@ -81,12 +82,12 @@ export function ListBody({
             type="text"
             autoComplete="off"
             enterKeyHint="done"
-            placeholder="o que falta?"
+            placeholder={t('placeholder')}
             maxLength={80}
             value={draft}
             onChange={(e) => setDraft(e.target.value)}
           />
-          <button type="submit" className="addButton" aria-label="Adicionar item" disabled={busy}>
+          <button type="submit" className="addButton" aria-label={t('add')} disabled={busy}>
             <Icon d={paths.plus} size={22} strokeWidth={2} />
           </button>
         </form>
@@ -97,10 +98,10 @@ export function ListBody({
         ) : (
           last && (
             <p className="hint" aria-live="polite">
-              {last.itemName} entrou em {last.categoryName}.{' '}
+              {t('added', {item: last.itemName, category: last.categoryName})}{' '}
               {lastItem && (
                 <button type="button" className="linkButton" style={{minHeight: 0, padding: 0, fontSize: 13}} onClick={() => onEdit(lastItem)}>
-                  Trocar
+                  {t('change')}
                 </button>
               )}
             </p>
@@ -130,17 +131,17 @@ export function ListBody({
 
         {items.length === 0 && (
           <div className="empty">
-            <p className="emptyTitle">Digite o que falta e aperte Enter.</p>
-            Depois, mande o link para quem faz compras com você. Ninguém precisa criar conta.
+            <p className="emptyTitle">{t('emptyTitle')}</p>
+            {t('emptyText')}
           </div>
         )}
 
         {done.length > 0 && (
-          <section className="group" aria-label="No carrinho">
+          <section className="group" aria-label={t('cart')}>
             <div className="sectionHead">
-              <span className="label">No carrinho · {done.length}</span>
+              <span className="label">{t('cartCount', {count: done.length})}</span>
               <button type="button" className="linkButton" onClick={onClearDone}>
-                Limpar comprados
+                {t('clearDone')}
               </button>
             </div>
             <div className="card">
@@ -157,7 +158,7 @@ export function ListBody({
 
         {items.length > 0 && (
           <p className="hint" style={{textAlign: 'center'}}>
-            Toque para marcar. Toque e segure para editar ou apagar.
+            {t('tapHint')}
           </p>
         )}
       </div>
@@ -167,6 +168,7 @@ export function ListBody({
 
 /** Tap toggles; long press (or right click) opens the editor. */
 function ItemRow({item, onToggle, onEdit, children}: {item: Item; onToggle: (i: Item) => void; onEdit: (i: Item) => void; children: ReactNode}) {
+  const t = useTranslations('ListBody');
   const timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const longPressed = useRef(false);
   const start = useRef<{x: number; y: number} | null>(null);
@@ -180,7 +182,7 @@ function ItemRow({item, onToggle, onEdit, children}: {item: Item; onToggle: (i: 
     <button
       type="button"
       className={item.done ? 'row done' : 'row'}
-      aria-label={item.done ? `Voltar ${item.name} para a lista` : `Marcar ${item.name} como comprado`}
+      aria-label={item.done ? t('markPending', {name: item.name}) : t('markDone', {name: item.name})}
       onPointerDown={(e) => {
         longPressed.current = false;
         start.current = {x: e.clientX, y: e.clientY};

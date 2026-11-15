@@ -1,14 +1,16 @@
-import Link from 'next/link';
+import {useTranslations} from 'next-intl';
+import {Link} from '@/i18n/navigation';
 
 export default function NotFound() {
+  const t = useTranslations('NotFound');
   return (
     <main className="screen">
       <div className="empty" style={{marginTop: 80}}>
-        <p className="emptyTitle">Página não encontrada</p>
-        Confira se o link está completo.
+        <p className="emptyTitle">{t('title')}</p>
+        {t('text')}
         <div style={{marginTop: 24}}>
           <Link className="primary" href="/">
-            Abrir o o que falta
+            {t('open')}
           </Link>
         </div>
       </div>

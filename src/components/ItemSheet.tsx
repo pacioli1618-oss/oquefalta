@@ -1,5 +1,6 @@
 'use client';
 
+import {useTranslations} from 'next-intl';
 import {useState} from 'react';
 import type {Category, Item} from '@/lib/api';
 import {CategoryIcon, Icon, Sheet, paths} from './ui';
@@ -18,13 +19,15 @@ export function ItemSheet({
   onDelete: () => void;
   onClose: () => void;
 }) {
+  const t = useTranslations('Item');
+  const common = useTranslations('Common');
   const fallback = categories.find((c) => c.isOther)?.id ?? categories[0]?.id ?? '';
   const [name, setName] = useState(item.name);
   const [categoryId, setCategoryId] = useState(item.categoryId ?? fallback);
   const trimmed = name.trim();
 
   return (
-    <Sheet title="Editar item" onClose={onClose}>
+    <Sheet title={t('title')} onClose={onClose}>
       <form
         style={{display: 'flex', flexDirection: 'column', gap: 18}}
         onSubmit={(e) => {
@@ -34,13 +37,13 @@ export function ItemSheet({
       >
         <div className="inputRow">
           <label htmlFor="item-name" className="visually-hidden">
-            Nome do item
+            {t('nameLabel')}
           </label>
           <input id="item-name" value={name} maxLength={80} onChange={(e) => setName(e.target.value)} autoComplete="off" />
         </div>
         <fieldset style={{border: 0, padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8}}>
           <legend className="label" style={{marginBottom: 8}}>
-            Categoria
+            {t('category')}
           </legend>
           <div className="choiceGrid">
             {categories.map((c) => (
@@ -54,11 +57,11 @@ export function ItemSheet({
           </div>
         </fieldset>
         <button type="submit" className="primary" disabled={!trimmed}>
-          Salvar
+          {common('save')}
         </button>
         <button type="button" className="secondary" onClick={onDelete}>
           <Icon d={paths.trash} size={19} />
-          Apagar item
+          {t('delete')}
         </button>
       </form>
     </Sheet>

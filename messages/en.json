@@ -1,0 +1,192 @@
+{
+  "Metadata": {
+    "description": "A shared shopping list, no sign-up. Send the link and you're done.",
+    "listTitle": "Shopping list",
+    "listDescription": "Open it to see the list and tick off what you've bought. No sign-up needed.",
+    "listsTitle": "My lists",
+    "categoriesTitle": "Categories"
+  },
+  "Common": {
+    "save": "Save",
+    "back": "Back",
+    "loading": "Loading…",
+    "defaultListName": "Groceries",
+    "otherCategory": "Other",
+    "share": "Share list"
+  },
+  "Brand": {
+    "homeLabel": "o que falta: my lists"
+  },
+  "Footer": {
+    "badges": "Free · Open source · No sign-up",
+    "endorsement": "a GR1618 Labs experiment",
+    "linksLabel": "About o que falta",
+    "about": "About",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  },
+  "LocaleSwitcher": {
+    "label": "Language"
+  },
+  "Home": {
+    "newList": "New list",
+    "shareLater": "Add the first item to create the list's link."
+  },
+  "List": {
+    "loading": "Loading the list…",
+    "notFoundTitle": "List not found",
+    "notFoundText": "The link may be incomplete, or the list was deleted.",
+    "errorTitle": "Couldn't open the list",
+    "errorText": "Check your connection and try again.",
+    "forget": "Remove from my lists",
+    "seeLists": "See my lists",
+    "rename": "Rename list",
+    "editCategories": "Edit categories",
+    "switchList": "{name}: switch list"
+  },
+  "ListBody": {
+    "count": "{pending, plural, =0 {{total, plural, =0 {New list} other {All bought}}} one {1 item to buy} other {# items to buy}}",
+    "newItem": "New item",
+    "placeholder": "what do you need?",
+    "add": "Add item",
+    "added": "{item} went into {category}.",
+    "change": "Change",
+    "emptyTitle": "Type what you need and press Enter.",
+    "emptyText": "Then send the link to whoever shops with you. Nobody needs an account.",
+    "cart": "In the cart",
+    "cartCount": "In the cart · {count}",
+    "clearDone": "Clear bought items",
+    "tapHint": "Tap to tick off. Tap and hold to edit or delete.",
+    "markDone": "Mark {name} as bought",
+    "markPending": "Put {name} back on the list"
+  },
+  "Lists": {
+    "saved": "{count, plural, one {1 saved list} other {# saved lists}}",
+    "title": "My lists",
+    "newListLabel": "Name of the new list",
+    "newListPlaceholder": "new list (e.g. barbecue)",
+    "create": "Create",
+    "openedToday": "opened today",
+    "openedYesterday": "opened yesterday",
+    "openedDaysAgo": "opened {days} days ago",
+    "empty": "No lists on this phone yet. Create one above.",
+    "deviceNote": "Lists are saved on this phone, with no account. Each one has its own link: open the link on another device and the list shows up there too."
+  },
+  "Item": {
+    "title": "Edit item",
+    "nameLabel": "Item name",
+    "category": "Category",
+    "delete": "Delete item"
+  },
+  "Rename": {
+    "title": "List name"
+  },
+  "Share": {
+    "intro": "Anyone who opens the link sees and edits the same list. No app to install, no account to create.",
+    "message": "I made the list \"{name}\" on o que falta. Open the link to see it and tick off what you've bought (no sign-up needed):",
+    "copy": "Copy",
+    "copied": "Copied",
+    "copyFailed": "Couldn't copy. Press and hold the link to copy it.",
+    "whatsapp": "Send on WhatsApp",
+    "more": "More options",
+    "safety": "Only send the link to people who shop with you: anyone with the link can edit the list. o que falta never asks for a password, phone number, ID number or payment."
+  },
+  "Categories": {
+    "loadError": "Couldn't open this list's categories.",
+    "backToList": "Back to the list",
+    "title": "Categories",
+    "intro": "The list follows this order. Put it in the order of your store's aisles. Tap an icon to change it.",
+    "changeIcon": "Change icon for {name}",
+    "nameLabel": "Category name",
+    "moveUp": "Move {name} up",
+    "moveDown": "Move {name} down",
+    "delete": "Delete {name}",
+    "pickIcon": "Pick an icon",
+    "newCategory": "New category",
+    "otherHint": "Items the app doesn't recognize go to {other}. When you delete a category, its items also go to {other}.",
+    "nameRequired": "Every category needs a name.",
+    "saving": "Saving…",
+    "save": "Save categories"
+  },
+  "Icons": {
+    "hortifruti": "Fruit",
+    "padaria": "Bread",
+    "laticinios": "Milk carton",
+    "carnes": "Meat",
+    "mercearia": "Jar",
+    "bebidas": "Bottle",
+    "congelados": "Snowflake",
+    "limpeza": "Spray bottle",
+    "higiene": "Soap",
+    "pet": "Paw",
+    "farmacia": "Medicine",
+    "casa": "House",
+    "presente": "Gift",
+    "outros": "Tag"
+  },
+  "Errors": {
+    "too_many_items": "The list has reached its 500-item limit. Clear the bought items to make room.",
+    "rate_limited": "Too many lists created in a short time. Try again later.",
+    "list_not_found": "This list no longer exists.",
+    "unknown": "Couldn't save. Check your connection and try again."
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "text": "Check that the link is complete.",
+    "open": "Open o que falta"
+  },
+  "Legal": {
+    "updatedAt": "Updated {date}",
+    "contactTitle": "Contact",
+    "contact": "Questions, requests about your data, or something broken: <link>{label}</link>."
+  },
+  "About": {
+    "title": "About o que falta",
+    "intro": "o que falta (Portuguese for \"what's missing\") is a shopping list you share with the people you live with or with friends. It is free, needs no sign-up and is open source.",
+    "safeTitle": "How to tell it is safe",
+    "safe1": "o que falta never asks for anything: no name, password, verification code, phone number, ID number, card details or payment. If a page asks for any of that, it is not o que falta.",
+    "safe2": "The link comes from someone you know. If in doubt, ask whoever sent it before opening it.",
+    "safeHost": "o que falta links start with {host}.",
+    "whoTitle": "Who makes it",
+    "who": "o que falta is a GR1618 Labs experiment, an independent project made in Brazil and maintained by {operator}.",
+    "codeTitle": "Open source",
+    "code": "The code is open source under the AGPL-3.0 license, and anyone can check how it works <repo>on GitHub</repo>."
+  },
+  "Privacy": {
+    "title": "Privacy policy",
+    "intro": "This policy explains, in plain language, what data o que falta keeps, why and for how long. o que falta has no sign-up and does not sell or share data for advertising.",
+    "collectTitle": "What we keep",
+    "collect1": "What you write in the list: the list's name, the items, whether they were bought, and the categories.",
+    "collect2": "A random device code, used only to limit how many lists can be created in a short time and to prevent abuse.",
+    "collect3": "To prevent abuse, we log list creation with a scrambled version (hash) of the IP address. That log is deleted within 1 day.",
+    "visibilityTitle": "Who sees what",
+    "visibility": "Anyone with the list's link can see and edit everything in it. So only send the link to people who shop with you.",
+    "deviceTitle": "On your device",
+    "device": "Your browser keeps the device code, the \"My lists\" list and the language you picked. We don't use advertising or tracking cookies.",
+    "providersTitle": "Services we use",
+    "providers": "Supabase (database, with servers in São Paulo, Brazil) and Vercel (website hosting). They handle the data only so that o que falta works, and may keep technical access logs, such as the IP address, under their own policies.",
+    "retentionTitle": "For how long",
+    "retention": "Lists are kept while o que falta is online, so the links keep working. You can ask for deletion at any time.",
+    "rightsTitle": "Your rights",
+    "rights1": "Under Brazil's data protection law (LGPD), you can ask to see, correct or delete your data, or a whole list. Write to the contact below and include the list's link.",
+    "rights2": "In the app itself, you can delete items and clear bought items at any time.",
+    "controllerTitle": "Data controller",
+    "controller": "The data controller is {operator}. If this policy changes, the date at the top is updated."
+  },
+  "Terms": {
+    "title": "Terms of use",
+    "intro": "By using o que falta, you agree to these terms.",
+    "serviceTitle": "The service",
+    "service": "o que falta is free and provided as is, with no guarantee that it will always work or be free of errors. It may change or be shut down; whenever possible, we will let you know beforehand.",
+    "contentTitle": "What you write",
+    "content": "You are responsible for what you write in the list. Don't use o que falta for illegal, offensive or misleading content, or for spam. We may remove lists that break these rules.",
+    "linksTitle": "Links",
+    "links": "Anyone with the list's link can see and edit the list. Be careful where you share the link.",
+    "paymentsTitle": "Payments",
+    "payments": "o que falta does not receive or handle payments, and sells nothing.",
+    "codeTitle": "Open source",
+    "code": "The code of o que falta is under the AGPL-3.0 license.",
+    "lawTitle": "Governing law",
+    "law": "These terms are governed by the laws of Brazil."
+  }
+}

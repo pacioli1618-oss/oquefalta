@@ -1,26 +1,33 @@
 'use client';
 
-import Link from 'next/link';
+import {useTranslations} from 'next-intl';
 import {useCallback, useState} from 'react';
+import {Link} from '@/i18n/navigation';
 import {api, ApiError, type Item, type ListData} from '@/lib/api';
 import {forgetList} from '@/lib/device-store';
 import {useList} from '@/lib/use-list';
 import {ItemSheet} from './ItemSheet';
-import {ListBody, countLabel, pickCategory, type AddResult} from './ListBody';
+import {ListBody, pickCategory, useCountLabel, type AddResult} from './ListBody';
 import {RenameSheet} from './RenameSheet';
 import {ShareSheet} from './ShareSheet';
 import {Brand, Disclaimers, Icon, paths} from './ui';
 
-export function errorMessage(error: unknown) {
-  if (error instanceof ApiError) {
-    if (error.code === 'too_many_items') return 'A lista chegou ao limite de 500 itens. Limpe os comprados para abrir espaço.';
-    if (error.code === 'rate_limited') return 'Muitas listas criadas em pouco tempo. Tente de novo mais tarde.';
-    if (error.code === 'list_not_found') return 'Esta lista não existe mais.';
-  }
-  return 'Não deu para salvar. Confira a internet e tente de novo.';
+const KNOWN_ERRORS = ['too_many_items', 'rate_limited', 'list_not_found'] as const;
+
+/** Turns an API error into a sentence for the person, in their language. */
+export function useErrorMessage() {
+  const t = useTranslations('Errors');
+  return (error: unknown) => {
+    const code = error instanceof ApiError ? KNOWN_ERRORS.find((c) => c === error.code) : undefined;
+    return t(code ?? 'unknown');
+  };
 }
 
 export function ListScreen({slug}: {slug: string}) {
+  const t = useTranslations('List');
+  const common = useTranslations('Common');
+  const errorMessage = useErrorMessage();
+  const counts = useCountLabel();
   const {state, mutate} = useList(slug);
   const [sheet, setSheet] = useState<'share' | 'rename' | null>(null);
   const [editing, setEditing] = useState<Item | null>(null);
@@ -36,7 +43,7 @@ export function ListScreen({slug}: {slug: string}) {
             <Brand />
           </div>
         </div>
-        <p className="empty">Carregando a lista…</p>
+        <p className="empty">{t('loading')}</p>
       </main>
     );
   }
@@ -51,16 +58,16 @@ export function ListScreen({slug}: {slug: string}) {
           </div>
         </div>
         <div className="empty">
-          <p className="emptyTitle">{notFound ? 'Lista não encontrada' : 'Não deu para abrir a lista'}</p>
-          {notFound ? 'O link pode estar incompleto ou a lista foi apagada.' : 'Confira a internet e tente de novo.'}
+          <p className="emptyTitle">{notFound ? t('notFoundTitle') : t('errorTitle')}</p>
+          {notFound ? t('notFoundText') : t('errorText')}
           <div style={{marginTop: 24, display: 'flex', flexDirection: 'column', gap: 10}}>
             {notFound && (
               <button type="button" className="secondary" onClick={() => forgetList(slug)}>
-                Tirar das minhas listas
+                {t('forget')}
               </button>
             )}
             <Link className="primary" href="/listas">
-              Ver minhas listas
+              {t('seeLists')}
             </Link>
           </div>
         </div>
@@ -95,7 +102,7 @@ export function ListScreen({slug}: {slug: string}) {
       },
     );
     const finalCategory = data.categories.find((c) => c.id === (existing?.categoryId ?? category?.id));
-    return {itemName: existing?.name ?? name, categoryName: finalCategory?.name ?? 'Outros', itemId};
+    return {itemName: existing?.name ?? name, categoryName: finalCategory?.name ?? common('otherCategory'), itemId};
   }
 
   return (
@@ -104,16 +111,16 @@ export function ListScreen({slug}: {slug: string}) {
         <div className="topbar">
           <Brand />
           <div style={{display: 'flex'}}>
-            <button type="button" className="iconButton" aria-label="Renomear lista" onClick={() => setSheet('rename')}>
+            <button type="button" className="iconButton" aria-label={t('rename')} onClick={() => setSheet('rename')}>
               <Icon d={paths.pencil} size={21} />
             </button>
-            <Link href={`/l/${slug}/categorias`} className="iconButton" aria-label="Editar categorias">
+            <Link href={`/l/${slug}/categorias`} className="iconButton" aria-label={t('editCategories')}>
               <Icon d={paths.tag} size={22} />
             </Link>
           </div>
         </div>
-        <span className="label">{countLabel(data.items)}</span>
-        <Link href="/listas" className="titleLink" aria-label={`${data.list.name}: trocar de lista`}>
+        <span className="label">{counts(data.items)}</span>
+        <Link href="/listas" className="titleLink" aria-label={t('switchList', {name: data.list.name})}>
           <h1 className="title">{data.list.name}</h1>
           <span style={{color: 'var(--ink-soft)', display: 'flex'}}>
             <Icon d={paths.chevronDown} size={22} strokeWidth={2} />
@@ -144,7 +151,7 @@ export function ListScreen({slug}: {slug: string}) {
       <div className="footer">
         <button type="button" className="primary" onClick={() => setSheet('share')}>
           <Icon d={paths.share} />
-          Compartilhar lista
+          {common('share')}
         </button>
         <Disclaimers />
       </div>

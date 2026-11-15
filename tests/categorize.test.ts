@@ -30,3 +30,34 @@ test('short words only match whole words', () => {
 test('unknown items return null', () => {
   assert.equal(guessIcon('pilha AA'), null);
 });
+
+test('guesses items in English', () => {
+  assert.equal(guessIcon('bananas'), 'hortifruti');
+  assert.equal(guessIcon('Milk'), 'laticinios');
+  assert.equal(guessIcon('eggs'), 'laticinios');
+  assert.equal(guessIcon('toilet paper'), 'higiene');
+  assert.equal(guessIcon('dish soap'), 'limpeza');
+  assert.equal(guessIcon('rice'), 'mercearia');
+  assert.equal(guessIcon('ice cream'), 'congelados');
+  assert.equal(guessIcon('peanut butter'), 'mercearia');
+  assert.equal(guessIcon('cat food'), 'pet');
+  assert.equal(guessIcon('orange juice'), 'bebidas');
+});
+
+test('guesses items in Spanish', () => {
+  assert.equal(guessIcon('leche'), 'laticinios');
+  assert.equal(guessIcon('huevos'), 'laticinios');
+  assert.equal(guessIcon('pan'), 'padaria');
+  assert.equal(guessIcon('lejía'), 'limpeza');
+  assert.equal(guessIcon('pollo'), 'carnes');
+  assert.equal(guessIcon('cerveza'), 'bebidas');
+  assert.equal(guessIcon('aceite de oliva'), 'mercearia');
+  assert.equal(guessIcon('pasta de dientes'), 'higiene');
+  assert.equal(guessIcon('leche condensada'), 'mercearia');
+});
+
+test('short English and Spanish words only match whole words', () => {
+  assert.equal(guessIcon('ice'), 'congelados');
+  assert.equal(guessIcon('té verde'), 'bebidas');
+  assert.equal(guessIcon('panela'), null);
+});

@@ -39,3 +39,5 @@ Validação: `oquefalta.gr1618.io`.
 4. Toque e segure um item: troque a categoria e apague.
 5. Categorias: renomeie, mude a ordem, crie uma nova e salve. A lista segue a nova ordem.
 6. Minhas listas: crie "Churrasco" e confira que as duas listas aparecem.
+7. Idioma: no rodapé, troque para English e depois para Español. A tela muda sem mudar o link.
+   Crie uma lista nova em cada idioma e confira que as categorias padrão nascem nesse idioma.

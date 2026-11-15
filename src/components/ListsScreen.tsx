@@ -1,23 +1,27 @@
 'use client';
 
-import Link from 'next/link';
-import {useRouter} from 'next/navigation';
+import {useLocale, useTranslations} from 'next-intl';
 import {useState} from 'react';
+import {Link, useRouter} from '@/i18n/navigation';
 import {api} from '@/lib/api';
 import {getDeviceId, saveList} from '@/lib/device-store';
 import {useSavedLists} from '@/lib/use-saved-lists';
-import {errorMessage} from './ListScreen';
+import {useErrorMessage} from './ListScreen';
 import {Brand, Disclaimers, Icon, paths} from './ui';
 
-function whenLabel(iso: string) {
+function whenLabel(iso: string, t: ReturnType<typeof useTranslations<'Lists'>>) {
   const days = Math.floor((Date.now() - new Date(iso).getTime()) / 86_400_000);
-  if (days <= 0) return 'aberta hoje';
-  if (days === 1) return 'aberta ontem';
-  return `aberta há ${days} dias`;
+  if (days <= 0) return t('openedToday');
+  if (days === 1) return t('openedYesterday');
+  return t('openedDaysAgo', {days});
 }
 
 export function ListsScreen() {
+  const t = useTranslations('Lists');
+  const locale = useLocale();
+  const errorMessage = useErrorMessage();
   const router = useRouter();
+
   const lists = useSavedLists();
   const [draft, setDraft] = useState('');
   const [busy, setBusy] = useState(false);
@@ -29,7 +33,7 @@ export function ListsScreen() {
     setBusy(true);
     setError(null);
     try {
-      const {slug} = await api.createList(name, getDeviceId());
+      const {slug} = await api.createList(name, getDeviceId(), locale);
       saveList(slug, name);
       router.push(`/l/${slug}`);
     } catch (e) {
@@ -46,8 +50,8 @@ export function ListsScreen() {
         <div className="topbar">
           <Brand href="/" />
         </div>
-        <span className="label">{count === 1 ? '1 lista salva' : `${count} listas salvas`}</span>
-        <h1 className="title">Minhas listas</h1>
+        <span className="label">{t('saved', {count})}</span>
+        <h1 className="title">{t('title')}</h1>
       </div>
 
       <div style={{padding: '0 24px'}}>
@@ -59,11 +63,11 @@ export function ListsScreen() {
           }}
         >
           <label htmlFor="new-list" className="visually-hidden">
-            Nome da nova lista
+            {t('newListLabel')}
           </label>
-          <input id="new-list" type="text" autoComplete="off" maxLength={80} placeholder="nova lista (ex.: churrasco)" value={draft} onChange={(e) => setDraft(e.target.value)} />
+          <input id="new-list" type="text" autoComplete="off" maxLength={80} placeholder={t('newListPlaceholder')} value={draft} onChange={(e) => setDraft(e.target.value)} />
           <button type="submit" className="textButton" disabled={busy}>
-            Criar
+            {t('create')}
           </button>
         </form>
         {error && (
@@ -81,19 +85,19 @@ export function ListsScreen() {
             </span>
             <span style={{flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', gap: 2}}>
               <span style={{fontSize: 17, lineHeight: '24px', fontWeight: 600, overflowWrap: 'anywhere'}}>{l.name}</span>
-              <span style={{fontSize: 13, lineHeight: '20px', color: 'var(--ink-muted)'}}>{whenLabel(l.openedAt)}</span>
+              <span style={{fontSize: 13, lineHeight: '20px', color: 'var(--ink-muted)'}}>{whenLabel(l.openedAt, t)}</span>
             </span>
             <span style={{color: 'var(--ink-muted)', display: 'flex'}}>
               <Icon d={paths.chevronRight} size={20} strokeWidth={2} />
             </span>
           </Link>
         ))}
-        {lists && lists.length === 0 && <p className="empty">Nenhuma lista neste celular ainda. Crie uma acima.</p>}
+        {lists && lists.length === 0 && <p className="empty">{t('empty')}</p>}
         <div className="trust" style={{padding: '12px 4px 0'}}>
           <span style={{flexShrink: 0, marginTop: 1}}>
             <Icon d={paths.phone} size={18} />
           </span>
-          <span>As listas ficam salvas neste celular, sem conta. Cada uma tem o próprio link: abra o link em outro aparelho e ela aparece lá também.</span>
+          <span>{t('deviceNote')}</span>
         </div>
       </div>
 

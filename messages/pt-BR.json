@@ -1,0 +1,192 @@
+{
+  "Metadata": {
+    "description": "Lista de compras compartilhada, sem cadastro. Manda o link e pronto.",
+    "listTitle": "Lista de compras",
+    "listDescription": "Abra para ver e marcar o que já comprou. Não precisa de cadastro.",
+    "listsTitle": "Minhas listas",
+    "categoriesTitle": "Categorias"
+  },
+  "Common": {
+    "save": "Salvar",
+    "back": "Voltar",
+    "loading": "Carregando…",
+    "defaultListName": "Compras de casa",
+    "otherCategory": "Outros",
+    "share": "Compartilhar lista"
+  },
+  "Brand": {
+    "homeLabel": "o que falta: minhas listas"
+  },
+  "Footer": {
+    "badges": "Gratuito · Open source · Sem cadastro",
+    "endorsement": "um experimento GR1618 Labs",
+    "linksLabel": "Sobre o o que falta",
+    "about": "Sobre",
+    "privacy": "Privacidade",
+    "terms": "Termos"
+  },
+  "LocaleSwitcher": {
+    "label": "Idioma"
+  },
+  "Home": {
+    "newList": "Lista nova",
+    "shareLater": "Adicione o primeiro item para criar o link da lista."
+  },
+  "List": {
+    "loading": "Carregando a lista…",
+    "notFoundTitle": "Lista não encontrada",
+    "notFoundText": "O link pode estar incompleto ou a lista foi apagada.",
+    "errorTitle": "Não deu para abrir a lista",
+    "errorText": "Confira a internet e tente de novo.",
+    "forget": "Tirar das minhas listas",
+    "seeLists": "Ver minhas listas",
+    "rename": "Renomear lista",
+    "editCategories": "Editar categorias",
+    "switchList": "{name}: trocar de lista"
+  },
+  "ListBody": {
+    "count": "{pending, plural, =0 {{total, plural, =0 {Lista nova} other {Tudo comprado}}} one {Falta 1 item} other {Faltam # itens}}",
+    "newItem": "Novo item",
+    "placeholder": "o que falta?",
+    "add": "Adicionar item",
+    "added": "{item} entrou em {category}.",
+    "change": "Trocar",
+    "emptyTitle": "Digite o que falta e aperte Enter.",
+    "emptyText": "Depois, mande o link para quem faz compras com você. Ninguém precisa criar conta.",
+    "cart": "No carrinho",
+    "cartCount": "No carrinho · {count}",
+    "clearDone": "Limpar comprados",
+    "tapHint": "Toque para marcar. Toque e segure para editar ou apagar.",
+    "markDone": "Marcar {name} como comprado",
+    "markPending": "Voltar {name} para a lista"
+  },
+  "Lists": {
+    "saved": "{count, plural, one {1 lista salva} other {# listas salvas}}",
+    "title": "Minhas listas",
+    "newListLabel": "Nome da nova lista",
+    "newListPlaceholder": "nova lista (ex.: churrasco)",
+    "create": "Criar",
+    "openedToday": "aberta hoje",
+    "openedYesterday": "aberta ontem",
+    "openedDaysAgo": "aberta há {days} dias",
+    "empty": "Nenhuma lista neste celular ainda. Crie uma acima.",
+    "deviceNote": "As listas ficam salvas neste celular, sem conta. Cada uma tem o próprio link: abra o link em outro aparelho e ela aparece lá também."
+  },
+  "Item": {
+    "title": "Editar item",
+    "nameLabel": "Nome do item",
+    "category": "Categoria",
+    "delete": "Apagar item"
+  },
+  "Rename": {
+    "title": "Nome da lista"
+  },
+  "Share": {
+    "intro": "Quem abrir o link vê e edita a mesma lista. Não precisa instalar nada nem criar conta.",
+    "message": "Fiz a lista \"{name}\" no o que falta. Abra o link para ver e marcar o que já comprou (não precisa de cadastro):",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "copyFailed": "Não deu para copiar. Toque e segure no link para copiar.",
+    "whatsapp": "Enviar pelo WhatsApp",
+    "more": "Outras opções",
+    "safety": "Mande o link só para quem faz compras com você: quem tem o link pode editar a lista. O o que falta nunca pede senha, telefone, CPF ou pagamento."
+  },
+  "Categories": {
+    "loadError": "Não deu para abrir as categorias desta lista.",
+    "backToList": "Voltar para a lista",
+    "title": "Categorias",
+    "intro": "A lista segue esta ordem. Deixe na ordem dos corredores do seu mercado. Toque no ícone para trocar.",
+    "changeIcon": "Trocar ícone de {name}",
+    "nameLabel": "Nome da categoria",
+    "moveUp": "Subir {name}",
+    "moveDown": "Descer {name}",
+    "delete": "Apagar {name}",
+    "pickIcon": "Escolha um ícone",
+    "newCategory": "Nova categoria",
+    "otherHint": "Itens que o app não reconhece vão para {other}. Ao apagar uma categoria, os itens dela também vão para {other}.",
+    "nameRequired": "Toda categoria precisa de um nome.",
+    "saving": "Salvando…",
+    "save": "Salvar categorias"
+  },
+  "Icons": {
+    "hortifruti": "Fruta",
+    "padaria": "Pão",
+    "laticinios": "Caixa de leite",
+    "carnes": "Carne",
+    "mercearia": "Pote",
+    "bebidas": "Garrafa",
+    "congelados": "Floco de neve",
+    "limpeza": "Borrifador",
+    "higiene": "Sabonete",
+    "pet": "Pata",
+    "farmacia": "Remédio",
+    "casa": "Casa",
+    "presente": "Presente",
+    "outros": "Etiqueta"
+  },
+  "Errors": {
+    "too_many_items": "A lista chegou ao limite de 500 itens. Limpe os comprados para abrir espaço.",
+    "rate_limited": "Muitas listas criadas em pouco tempo. Tente de novo mais tarde.",
+    "list_not_found": "Esta lista não existe mais.",
+    "unknown": "Não deu para salvar. Confira a internet e tente de novo."
+  },
+  "NotFound": {
+    "title": "Página não encontrada",
+    "text": "Confira se o link está completo.",
+    "open": "Abrir o o que falta"
+  },
+  "Legal": {
+    "updatedAt": "Atualizado em {date}",
+    "contactTitle": "Contato",
+    "contact": "Dúvidas, pedidos sobre seus dados ou algo errado: <link>{label}</link>."
+  },
+  "About": {
+    "title": "Sobre o o que falta",
+    "intro": "O o que falta é uma lista de compras que você compartilha com quem mora com você ou com os amigos. É gratuito, sem cadastro e de código aberto.",
+    "safeTitle": "Como saber que é seguro",
+    "safe1": "O o que falta não pede nada: nem nome, nem senha, código de verificação, telefone, CPF, dados de cartão ou pagamento. Se uma página pedir isso, não é o o que falta.",
+    "safe2": "O link chega de alguém que você conhece. Na dúvida, pergunte a quem mandou antes de abrir.",
+    "safeHost": "Os links do o que falta começam com {host}.",
+    "whoTitle": "Quem faz",
+    "who": "O o que falta é um experimento do GR1618 Labs, um projeto independente feito no Brasil e mantido por {operator}.",
+    "codeTitle": "Código aberto",
+    "code": "O código é aberto, sob a licença AGPL-3.0, e qualquer pessoa pode conferir como ele funciona <repo>no GitHub</repo>."
+  },
+  "Privacy": {
+    "title": "Política de privacidade",
+    "intro": "Esta política explica, em linguagem simples, quais dados o o que falta guarda, para quê e por quanto tempo. O o que falta não tem cadastro e não vende nem compartilha dados para publicidade.",
+    "collectTitle": "O que guardamos",
+    "collect1": "O que você escreve na lista: o nome da lista, os itens, se já foram comprados e as categorias.",
+    "collect2": "Um código aleatório do aparelho, usado só para limitar quantas listas podem ser criadas em pouco tempo e evitar abuso.",
+    "collect3": "Para evitar abuso, registramos a criação de listas com uma versão embaralhada (hash) do endereço IP. Esse registro é apagado em até 1 dia.",
+    "visibilityTitle": "Quem vê o quê",
+    "visibility": "Quem tem o link da lista pode ver e editar tudo o que está nela. Por isso, mande o link só para quem faz compras com você.",
+    "deviceTitle": "No seu aparelho",
+    "device": "O navegador guarda o código do aparelho, a lista de \"Minhas listas\" e o idioma escolhido. Não usamos cookies de publicidade nem de rastreamento.",
+    "providersTitle": "Serviços que usamos",
+    "providers": "Supabase (banco de dados, com servidores em São Paulo) e Vercel (hospedagem do site). Eles tratam os dados só para o o que falta funcionar e podem manter registros técnicos de acesso, como o endereço IP, conforme as próprias políticas.",
+    "retentionTitle": "Por quanto tempo",
+    "retention": "As listas ficam guardadas enquanto o o que falta estiver no ar, para que os links continuem funcionando. Você pode pedir a exclusão a qualquer momento.",
+    "rightsTitle": "Seus direitos",
+    "rights1": "Pela LGPD, você pode pedir para ver, corrigir ou apagar os seus dados, ou uma lista inteira. Escreva para o contato abaixo e mande junto o link da lista.",
+    "rights2": "No próprio app, você pode apagar itens e limpar os comprados a qualquer momento.",
+    "controllerTitle": "Responsável",
+    "controller": "O responsável pelos dados é {operator}. Se esta política mudar, a data no topo é atualizada."
+  },
+  "Terms": {
+    "title": "Termos de uso",
+    "intro": "Ao usar o o que falta, você concorda com estes termos.",
+    "serviceTitle": "O serviço",
+    "service": "O o que falta é gratuito e oferecido como está, sem garantia de que vai funcionar sempre ou sem erros. Ele pode mudar ou ser encerrado; sempre que possível, avisaremos antes.",
+    "contentTitle": "O que você escreve",
+    "content": "Você é responsável pelo que escreve na lista. Não use o o que falta para conteúdo ilegal, ofensivo ou enganoso, nem para spam. Podemos remover listas que descumpram estas regras.",
+    "linksTitle": "Links",
+    "links": "Quem tem o link da lista pode ver e editar a lista. Cuide de onde você compartilha o link.",
+    "paymentsTitle": "Pagamentos",
+    "payments": "O o que falta não recebe nem intermedeia pagamentos, e não vende nada.",
+    "codeTitle": "Código aberto",
+    "code": "O código do o que falta está sob a licença AGPL-3.0.",
+    "lawTitle": "Lei aplicável",
+    "law": "Estes termos seguem as leis do Brasil."
+  }
+}

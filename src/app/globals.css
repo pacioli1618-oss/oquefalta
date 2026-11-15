@@ -205,6 +205,26 @@ a {
   padding: 2px 4px;
 }
 
+.localeSwitcher {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--ink-muted);
+}
+
+.localeSwitcher select {
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid var(--border-control);
+  background: var(--card);
+  color: var(--ink);
+  font: inherit;
+  padding: 0 8px;
+}
+
 /* ---------- Controls ---------- */
 
 .inputRow {
