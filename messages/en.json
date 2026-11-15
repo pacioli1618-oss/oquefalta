@@ -61,7 +61,7 @@
     "markPending": "Put {name} back on the list"
   },
   "Lists": {
-    "saved": "{count, plural, one {1 saved list} other {# saved lists}}",
+    "saved": "{count, plural, =0 {0 saved lists} one {1 saved list} other {# saved lists}}",
     "title": "My lists",
     "newListLabel": "Name of the new list",
     "newListPlaceholder": "new list (e.g. barbecue)",

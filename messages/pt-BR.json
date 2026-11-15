@@ -61,7 +61,7 @@
     "markPending": "Voltar {name} para a lista"
   },
   "Lists": {
-    "saved": "{count, plural, one {1 lista salva} other {# listas salvas}}",
+    "saved": "{count, plural, =0 {0 listas salvas} one {1 lista salva} other {# listas salvas}}",
     "title": "Minhas listas",
     "newListLabel": "Nome da nova lista",
     "newListPlaceholder": "nova lista (ex.: churrasco)",
