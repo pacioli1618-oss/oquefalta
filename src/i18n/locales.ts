@@ -9,7 +9,7 @@ export const defaultLocale: Locale = 'pt-BR';
 
 // Each language's name written in itself, for the switcher.
 export const localeNames: Record<Locale, string> = {
-  'pt-BR': 'Português (Brasil)',
+  'pt-BR': 'Português', // short: it sits next to the brand and the list buttons
   es: 'Español',
   en: 'English',
 };

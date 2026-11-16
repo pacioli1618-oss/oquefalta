@@ -9,6 +9,7 @@ import {useSavedLists} from '@/lib/use-saved-lists';
 import {ListBody, pickCategory, type AddResult} from './ListBody';
 import {useErrorMessage} from './ListScreen';
 import {Brand, Disclaimers, Icon, paths} from './ui';
+import {LocaleSwitcher} from './LocaleSwitcher';
 
 /**
  * "/": opens the last list used on this device. With none, shows an empty list right away
@@ -55,6 +56,7 @@ export function HomeScreen() {
       <div className="header">
         <div className="topbar">
           <Brand />
+          <LocaleSwitcher />
         </div>
         <span className="label">{t('newList')}</span>
         <h1 className="title">{defaultName}</h1>

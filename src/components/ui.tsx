@@ -4,7 +4,6 @@ import {useTranslations} from 'next-intl';
 import {useEffect, useRef, type ReactNode} from 'react';
 import {Link} from '@/i18n/navigation';
 import {iconPath} from '@/lib/icons';
-import {LocaleSwitcher} from './LocaleSwitcher';
 
 /** The "o que falta" symbol: a checklist page on a tomato square (logo concept 1). */
 export function LogoMark({size = 28}: {size?: number}) {
@@ -84,7 +83,6 @@ export function Disclaimers() {
         <span aria-hidden="true">·</span>
         <Link href="/termos">{t('terms')}</Link>
       </nav>
-      <LocaleSwitcher />
     </>
   );
 }

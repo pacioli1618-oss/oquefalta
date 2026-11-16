@@ -92,6 +92,8 @@ a {
 
 .topbar {
   display: flex;
+  flex-wrap: wrap;
+  gap: 4px 8px;
   align-items: center;
   justify-content: space-between;
   min-height: 44px;
@@ -210,23 +212,34 @@ a {
 }
 
 .localeSwitcher {
-  display: flex;
-  justify-content: center;
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   font-size: 13px;
   line-height: 20px;
-  color: var(--ink-muted);
+  color: var(--ink-soft);
 }
 
 .localeSwitcher select {
   height: 36px;
-  border-radius: 10px;
+  border-radius: 6px;
   border: 1px solid var(--border-control);
   background: var(--card);
   color: var(--ink);
   font: inherit;
-  padding: 0 8px;
+  padding: 0 6px;
+}
+
+/* On phones the select alone fits next to the brand; the label stays for screen readers. */
+@media (max-width: 459px) {
+  .localeLabel {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
 }
 
 /* ---------- Controls ---------- */

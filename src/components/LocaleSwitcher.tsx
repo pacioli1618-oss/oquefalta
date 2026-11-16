@@ -5,6 +5,7 @@ import {useTransition} from 'react';
 import {usePathname, useRouter} from '@/i18n/navigation';
 import {isLocale, localeNames, locales} from '@/i18n/locales';
 
+// Sits next to the brand in the header, as in the other apps of the series.
 // Switches the language without changing the URL: sets the OQF_LOCALE cookie and reloads the route.
 // The list itself (its name, items and category names) is data and stays as people wrote it.
 export function LocaleSwitcher() {
@@ -16,7 +17,7 @@ export function LocaleSwitcher() {
 
   return (
     <label className="localeSwitcher">
-      <span>{t('label')}</span>
+      <span className="localeLabel">{t('label')}</span>
       <select
         value={locale}
         disabled={isPending}
