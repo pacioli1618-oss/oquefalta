@@ -15,12 +15,12 @@
     "share": "Share list"
   },
   "Brand": {
-    "homeLabel": "oquefalta: my lists"
+    "homeLabel": "OQueFalta: my lists"
   },
   "Footer": {
     "badges": "Free · Open source · No sign-up",
     "endorsement": "a GR1618 Labs experiment",
-    "linksLabel": "About oquefalta",
+    "linksLabel": "About OQueFalta",
     "about": "About",
     "privacy": "Privacy",
     "terms": "Terms"
@@ -83,13 +83,13 @@
   },
   "Share": {
     "intro": "Anyone who opens the link sees and edits the same list. No app to install, no account to create.",
-    "message": "I made the list \"{name}\" on oquefalta. Open the link to see it and tick off what you've bought (no sign-up needed):",
+    "message": "I made the list \"{name}\" on OQueFalta. Open the link to see it and tick off what you've bought (no sign-up needed):",
     "copy": "Copy",
     "copied": "Copied",
     "copyFailed": "Couldn't copy. Press and hold the link to copy it.",
     "whatsapp": "Send on WhatsApp",
     "more": "More options",
-    "safety": "Only send the link to people who shop with you: anyone with the link can edit the list. oquefalta never asks for a password, phone number, ID number or payment."
+    "safety": "Only send the link to people who shop with you: anyone with the link can edit the list. OQueFalta never asks for a password, phone number, ID number or payment."
   },
   "Categories": {
     "loadError": "Couldn't open this list's categories.",
@@ -133,7 +133,7 @@
   "NotFound": {
     "title": "Page not found",
     "text": "Check that the link is complete.",
-    "open": "Open oquefalta"
+    "open": "Open OQueFalta"
   },
   "Legal": {
     "updatedAt": "Updated {date}",
@@ -141,20 +141,20 @@
     "contact": "Questions, requests about your data, or something broken: <link>{label}</link>."
   },
   "About": {
-    "title": "About oquefalta",
-    "intro": "oquefalta (from the Portuguese \"o que falta\", \"what's missing\") is a shopping list you share with the people you live with or with friends. It is free, needs no sign-up and is open source.",
+    "title": "About OQueFalta",
+    "intro": "OQueFalta (from the Portuguese \"o que falta\", \"what's missing\") is a shopping list you share with the people you live with or with friends. It is free, needs no sign-up and is open source.",
     "safeTitle": "How to tell it is safe",
-    "safe1": "oquefalta never asks for anything: no name, password, verification code, phone number, ID number, card details or payment. If a page asks for any of that, it is not oquefalta.",
+    "safe1": "OQueFalta never asks for anything: no name, password, verification code, phone number, ID number, card details or payment. If a page asks for any of that, it is not OQueFalta.",
     "safe2": "The link comes from someone you know. If in doubt, ask whoever sent it before opening it.",
-    "safeHost": "oquefalta links start with {host}.",
+    "safeHost": "OQueFalta links start with {host}.",
     "whoTitle": "Who makes it",
-    "who": "oquefalta is a GR1618 Labs experiment, an independent project made in Brazil and maintained by {operator}.",
+    "who": "OQueFalta is a GR1618 Labs experiment, an independent project made in Brazil and maintained by {operator}.",
     "codeTitle": "Open source",
     "code": "The code is open source under the AGPL-3.0 license, and anyone can check how it works <repo>on GitHub</repo>."
   },
   "Privacy": {
     "title": "Privacy policy",
-    "intro": "This policy explains, in plain language, what data oquefalta keeps, why and for how long. oquefalta has no sign-up and does not sell or share data for advertising.",
+    "intro": "This policy explains, in plain language, what data OQueFalta keeps, why and for how long. OQueFalta has no sign-up and does not sell or share data for advertising.",
     "collectTitle": "What we keep",
     "collect1": "What you write in the list: the list's name, the items, whether they were bought, and the categories.",
     "collect2": "A random device code, used only to limit how many lists can be created in a short time and to prevent abuse.",
@@ -164,9 +164,9 @@
     "deviceTitle": "On your device",
     "device": "Your browser keeps the device code, the \"My lists\" list and the language you picked. We don't use advertising or tracking cookies.",
     "providersTitle": "Services we use",
-    "providers": "Supabase (database, with servers in São Paulo, Brazil) and Vercel (website hosting). They handle the data only so that oquefalta works, and may keep technical access logs, such as the IP address, under their own policies.",
+    "providers": "Supabase (database, with servers in São Paulo, Brazil) and Vercel (website hosting). They handle the data only so that OQueFalta works, and may keep technical access logs, such as the IP address, under their own policies.",
     "retentionTitle": "For how long",
-    "retention": "Lists are kept while oquefalta is online, so the links keep working. You can ask for deletion at any time.",
+    "retention": "Lists are kept while OQueFalta is online, so the links keep working. You can ask for deletion at any time.",
     "rightsTitle": "Your rights",
     "rights1": "Under Brazil's data protection law (LGPD), you can ask to see, correct or delete your data, or a whole list. Write to the contact below and include the list's link.",
     "rights2": "In the app itself, you can delete items and clear bought items at any time.",
@@ -175,17 +175,17 @@
   },
   "Terms": {
     "title": "Terms of use",
-    "intro": "By using oquefalta, you agree to these terms.",
+    "intro": "By using OQueFalta, you agree to these terms.",
     "serviceTitle": "The service",
-    "service": "oquefalta is free and provided as is, with no guarantee that it will always work or be free of errors. It may change or be shut down; whenever possible, we will let you know beforehand.",
+    "service": "OQueFalta is free and provided as is, with no guarantee that it will always work or be free of errors. It may change or be shut down; whenever possible, we will let you know beforehand.",
     "contentTitle": "What you write",
-    "content": "You are responsible for what you write in the list. Don't use oquefalta for illegal, offensive or misleading content, or for spam. We may remove lists that break these rules.",
+    "content": "You are responsible for what you write in the list. Don't use OQueFalta for illegal, offensive or misleading content, or for spam. We may remove lists that break these rules.",
     "linksTitle": "Links",
     "links": "Anyone with the list's link can see and edit the list. Be careful where you share the link.",
     "paymentsTitle": "Payments",
-    "payments": "oquefalta does not receive or handle payments, and sells nothing.",
+    "payments": "OQueFalta does not receive or handle payments, and sells nothing.",
     "codeTitle": "Open source",
-    "code": "The code of oquefalta is under the AGPL-3.0 license.",
+    "code": "The code of OQueFalta is under the AGPL-3.0 license.",
     "lawTitle": "Governing law",
     "law": "These terms are governed by the laws of Brazil."
   }

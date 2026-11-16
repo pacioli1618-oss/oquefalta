@@ -14,7 +14,7 @@ export default function GlobalNotFound() {
             <p className="emptyTitle">Página não encontrada · Página no encontrada · Page not found</p>
             <div style={{marginTop: 24}}>
               <Link className="primary" href="/">
-                oquefalta
+                OQueFalta
               </Link>
             </div>
           </div>

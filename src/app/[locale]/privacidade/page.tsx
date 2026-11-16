@@ -9,7 +9,7 @@ import {site} from '@/lib/site';
 export async function generateMetadata({params}: PageProps<'/[locale]/privacidade'>): Promise<Metadata> {
   const {locale} = await params;
   const t = await getTranslations({locale: asLocale(locale), namespace: 'Privacy'});
-  return {title: `${t('title')} · oquefalta`};
+  return {title: `${t('title')} · OQueFalta`};
 }
 
 export default function Page({params}: PageProps<'/[locale]/privacidade'>) {
