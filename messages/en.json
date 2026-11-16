@@ -188,5 +188,16 @@
     "code": "The code of OQueFalta is under the AGPL-3.0 license.",
     "lawTitle": "Governing law",
     "law": "These terms are governed by the laws of Brazil."
+  },
+  "Install": {
+    "button": "Add to home screen",
+    "title": "Add to home screen",
+    "intro": "OQueFalta then sits with your other apps and opens straight to your list, no link to find.",
+    "ios1": "Tap the Share button (the square with an arrow pointing up) in Safari's toolbar.",
+    "ios2": "Scroll down and tap \"Add to Home Screen\".",
+    "ios3": "Tap \"Add\". The OQueFalta icon shows up on your home screen.",
+    "menu1": "Open the browser menu (the three dots ⋮).",
+    "menu2": "Tap \"Add to Home screen\" or \"Install app\" and confirm.",
+    "done": "Got it"
   }
 }

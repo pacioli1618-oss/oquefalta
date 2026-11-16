@@ -9,6 +9,7 @@ import {useSavedLists} from '@/lib/use-saved-lists';
 import {useErrorMessage} from './ListScreen';
 import {Brand, Disclaimers, Icon, paths} from './ui';
 import {LocaleSwitcher} from './LocaleSwitcher';
+import {InstallButton} from './InstallButton';
 
 function whenLabel(iso: string, t: ReturnType<typeof useTranslations<'Lists'>>) {
   const days = Math.floor((Date.now() - new Date(iso).getTime()) / 86_400_000);
@@ -104,6 +105,7 @@ export function ListsScreen() {
       </div>
 
       <div className="footer">
+        <InstallButton />
         <Disclaimers />
       </div>
     </main>

@@ -64,6 +64,7 @@ export const paths = {
   phone: 'M8.5 2.5h7a2.5 2.5 0 0 1 2.5 2.5v14a2.5 2.5 0 0 1-2.5 2.5h-7A2.5 2.5 0 0 1 6 19V5a2.5 2.5 0 0 1 2.5-2.5ZM11 18.5h2',
   link: 'M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7',
   pencil: 'M4 20h4L19 9l-4-4L4 16ZM13.5 6.5l4 4',
+  install: 'M8.5 2.5h7a2.5 2.5 0 0 1 2.5 2.5v14a2.5 2.5 0 0 1-2.5 2.5h-7A2.5 2.5 0 0 1 6 19V5a2.5 2.5 0 0 1 2.5-2.5ZM12 7v7M9 11l3 3 3-3M11 18.5h2',
 };
 
 /** "Gratuito · Open source · Sem cadastro", the GR1618 Labs endorsement, the legal links and the language. */

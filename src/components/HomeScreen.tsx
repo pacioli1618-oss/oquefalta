@@ -10,6 +10,7 @@ import {ListBody, pickCategory, type AddResult} from './ListBody';
 import {useErrorMessage} from './ListScreen';
 import {Brand, Disclaimers, Icon, paths} from './ui';
 import {LocaleSwitcher} from './LocaleSwitcher';
+import {InstallButton} from './InstallButton';
 
 /**
  * "/": opens the last list used on this device. With none, shows an empty list right away
@@ -70,6 +71,7 @@ export function HomeScreen() {
         <p id="share-later" className="fine">
           {t('shareLater')}
         </p>
+        <InstallButton />
         <Disclaimers />
       </div>
     </main>

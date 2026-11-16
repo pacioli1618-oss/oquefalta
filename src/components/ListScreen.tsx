@@ -12,6 +12,7 @@ import {RenameSheet} from './RenameSheet';
 import {ShareSheet} from './ShareSheet';
 import {Brand, Disclaimers, Icon, paths} from './ui';
 import {LocaleSwitcher} from './LocaleSwitcher';
+import {InstallButton} from './InstallButton';
 
 const KNOWN_ERRORS = ['too_many_items', 'rate_limited', 'list_not_found'] as const;
 
@@ -157,6 +158,7 @@ export function ListScreen({slug}: {slug: string}) {
           <Icon d={paths.share} />
           {common('share')}
         </button>
+        <InstallButton />
         <Disclaimers />
       </div>
 
