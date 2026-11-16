@@ -1,12 +1,12 @@
 import type {MetadataRoute} from 'next';
 
-// /manifest.webmanifest: lets people add "o que falta" to the home screen. No service worker:
+// /manifest.webmanifest: lets people add "oquefalta" to the home screen. No service worker:
 // the list is live (Supabase + Realtime). Opens on "/", which jumps to the last list used.
 export default function manifest(): MetadataRoute.Manifest {
   return {
     id: '/',
-    name: 'o que falta',
-    short_name: 'o que falta',
+    name: 'oquefalta',
+    short_name: 'oquefalta',
     description: 'Lista de compras compartilhada, sem cadastro.',
     lang: 'pt-BR',
     start_url: '/',

@@ -8,7 +8,7 @@ import {asLocale} from '@/i18n/locales';
 export async function generateMetadata({params}: PageProps<'/[locale]/termos'>): Promise<Metadata> {
   const {locale} = await params;
   const t = await getTranslations({locale: asLocale(locale), namespace: 'Terms'});
-  return {title: `${t('title')} · o que falta`};
+  return {title: `${t('title')} · oquefalta`};
 }
 
 export default function Page({params}: PageProps<'/[locale]/termos'>) {

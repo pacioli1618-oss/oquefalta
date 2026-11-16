@@ -6,7 +6,7 @@ import {ListsScreen} from '@/components/ListsScreen';
 export async function generateMetadata({params}: PageProps<'/[locale]/listas'>): Promise<Metadata> {
   const {locale} = await params;
   const t = await getTranslations({locale: asLocale(locale), namespace: 'Metadata'});
-  return {title: `${t('listsTitle')} · o que falta`};
+  return {title: `${t('listsTitle')} · oquefalta`};
 }
 
 export default async function Page({params}: PageProps<'/[locale]/listas'>) {

@@ -21,11 +21,11 @@ export async function generateMetadata({params}: LayoutProps<'/[locale]'>): Prom
   const description = t('description');
   return {
     metadataBase: siteUrl ? new URL(siteUrl) : undefined,
-    title: 'o que falta',
+    title: 'oquefalta',
     description,
-    applicationName: 'o que falta',
-    openGraph: {title: 'o que falta', description, siteName: 'o que falta', type: 'website', locale: ogLocales[locale]},
-    appleWebApp: {capable: true, title: 'o que falta', statusBarStyle: 'default'},
+    applicationName: 'oquefalta',
+    openGraph: {title: 'oquefalta', description, siteName: 'oquefalta', type: 'website', locale: ogLocales[locale]},
+    appleWebApp: {capable: true, title: 'oquefalta', statusBarStyle: 'default'},
     // Lists are private links: keep them out of search engines.
     robots: {index: false, follow: false},
   };

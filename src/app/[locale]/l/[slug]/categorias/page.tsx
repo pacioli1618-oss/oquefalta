@@ -6,7 +6,7 @@ import {CategoriesScreen} from '@/components/CategoriesScreen';
 export async function generateMetadata({params}: PageProps<'/[locale]/l/[slug]/categorias'>): Promise<Metadata> {
   const {locale} = await params;
   const t = await getTranslations({locale: asLocale(locale), namespace: 'Metadata'});
-  return {title: `${t('categoriesTitle')} · o que falta`};
+  return {title: `${t('categoriesTitle')} · oquefalta`};
 }
 
 export default async function Page({params}: PageProps<'/[locale]/l/[slug]/categorias'>) {

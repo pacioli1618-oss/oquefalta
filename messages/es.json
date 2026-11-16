@@ -15,12 +15,12 @@
     "share": "Compartir lista"
   },
   "Brand": {
-    "homeLabel": "o que falta: mis listas"
+    "homeLabel": "oquefalta: mis listas"
   },
   "Footer": {
     "badges": "Gratis · Código abierto · Sin registro",
     "endorsement": "un experimento de GR1618 Labs",
-    "linksLabel": "Acerca de o que falta",
+    "linksLabel": "Acerca de oquefalta",
     "about": "Acerca de",
     "privacy": "Privacidad",
     "terms": "Términos"
@@ -83,13 +83,13 @@
   },
   "Share": {
     "intro": "Quien abra el enlace ve y edita la misma lista. No hace falta instalar nada ni crear una cuenta.",
-    "message": "Armé la lista \"{name}\" en o que falta. Abre el enlace para verla y marcar lo que ya compraste (no hace falta registrarse):",
+    "message": "Armé la lista \"{name}\" en oquefalta. Abre el enlace para verla y marcar lo que ya compraste (no hace falta registrarse):",
     "copy": "Copiar",
     "copied": "Copiado",
     "copyFailed": "No se pudo copiar. Mantén presionado el enlace para copiarlo.",
     "whatsapp": "Enviar por WhatsApp",
     "more": "Más opciones",
-    "safety": "Envía el enlace solo a quien hace las compras contigo: quien tiene el enlace puede editar la lista. o que falta nunca pide contraseña, teléfono, documento de identidad ni pagos."
+    "safety": "Envía el enlace solo a quien hace las compras contigo: quien tiene el enlace puede editar la lista. oquefalta nunca pide contraseña, teléfono, documento de identidad ni pagos."
   },
   "Categories": {
     "loadError": "No se pudieron abrir las categorías de esta lista.",
@@ -133,7 +133,7 @@
   "NotFound": {
     "title": "Página no encontrada",
     "text": "Revisa que el enlace esté completo.",
-    "open": "Abrir o que falta"
+    "open": "Abrir oquefalta"
   },
   "Legal": {
     "updatedAt": "Actualizado el {date}",
@@ -141,20 +141,20 @@
     "contact": "Dudas, solicitudes sobre tus datos o algo que no funciona: <link>{label}</link>."
   },
   "About": {
-    "title": "Acerca de o que falta",
-    "intro": "o que falta (\"lo que falta\", en portugués) es una lista de compras que compartes con quien vive contigo o con amigos. Es gratis, sin registro y de código abierto.",
+    "title": "Acerca de oquefalta",
+    "intro": "oquefalta (del portugués \"o que falta\", \"lo que falta\") es una lista de compras que compartes con quien vive contigo o con amigos. Es gratis, sin registro y de código abierto.",
     "safeTitle": "Cómo saber que es seguro",
-    "safe1": "o que falta no pide nada: ni nombre, ni contraseña, código de verificación, teléfono, documento de identidad, datos de tarjeta ni pagos. Si una página te pide eso, no es o que falta.",
+    "safe1": "oquefalta no pide nada: ni nombre, ni contraseña, código de verificación, teléfono, documento de identidad, datos de tarjeta ni pagos. Si una página te pide eso, no es oquefalta.",
     "safe2": "El enlace te llega de alguien que conoces. Si tienes dudas, pregúntale a quien lo envió antes de abrirlo.",
-    "safeHost": "Los enlaces de o que falta empiezan con {host}.",
+    "safeHost": "Los enlaces de oquefalta empiezan con {host}.",
     "whoTitle": "Quién lo hace",
-    "who": "o que falta es un experimento de GR1618 Labs, un proyecto independiente hecho en Brasil y mantenido por {operator}.",
+    "who": "oquefalta es un experimento de GR1618 Labs, un proyecto independiente hecho en Brasil y mantenido por {operator}.",
     "codeTitle": "Código abierto",
     "code": "El código es abierto, bajo la licencia AGPL-3.0, y cualquiera puede ver cómo funciona <repo>en GitHub</repo>."
   },
   "Privacy": {
     "title": "Política de privacidad",
-    "intro": "Esta política explica, en lenguaje sencillo, qué datos guarda o que falta, para qué y por cuánto tiempo. o que falta no tiene registro y no vende ni comparte datos con fines publicitarios.",
+    "intro": "Esta política explica, en lenguaje sencillo, qué datos guarda oquefalta, para qué y por cuánto tiempo. oquefalta no tiene registro y no vende ni comparte datos con fines publicitarios.",
     "collectTitle": "Qué guardamos",
     "collect1": "Lo que escribes en la lista: el nombre de la lista, los artículos, si ya se compraron y las categorías.",
     "collect2": "Un código aleatorio del dispositivo, que se usa solo para limitar cuántas listas se pueden crear en poco tiempo y evitar abusos.",
@@ -164,9 +164,9 @@
     "deviceTitle": "En tu dispositivo",
     "device": "El navegador guarda el código del dispositivo, la lista de \"Mis listas\" y el idioma elegido. No usamos cookies publicitarias ni de seguimiento.",
     "providersTitle": "Servicios que usamos",
-    "providers": "Supabase (base de datos, con servidores en São Paulo, Brasil) y Vercel (alojamiento del sitio). Tratan los datos solo para que o que falta funcione y pueden guardar registros técnicos de acceso, como la dirección IP, según sus propias políticas.",
+    "providers": "Supabase (base de datos, con servidores en São Paulo, Brasil) y Vercel (alojamiento del sitio). Tratan los datos solo para que oquefalta funcione y pueden guardar registros técnicos de acceso, como la dirección IP, según sus propias políticas.",
     "retentionTitle": "Por cuánto tiempo",
-    "retention": "Las listas se guardan mientras o que falta esté en línea, para que los enlaces sigan funcionando. Puedes pedir que se borren en cualquier momento.",
+    "retention": "Las listas se guardan mientras oquefalta esté en línea, para que los enlaces sigan funcionando. Puedes pedir que se borren en cualquier momento.",
     "rightsTitle": "Tus derechos",
     "rights1": "Según la ley brasileña de protección de datos (LGPD), puedes pedir ver, corregir o borrar tus datos, o una lista entera. Escribe al contacto de abajo e incluye el enlace de la lista.",
     "rights2": "En la propia app puedes borrar artículos y borrar los comprados en cualquier momento.",
@@ -175,17 +175,17 @@
   },
   "Terms": {
     "title": "Términos de uso",
-    "intro": "Al usar o que falta, aceptas estos términos.",
+    "intro": "Al usar oquefalta, aceptas estos términos.",
     "serviceTitle": "El servicio",
-    "service": "o que falta es gratis y se ofrece tal como está, sin garantía de que funcione siempre o sin errores. Puede cambiar o dejar de existir; siempre que sea posible, avisaremos antes.",
+    "service": "oquefalta es gratis y se ofrece tal como está, sin garantía de que funcione siempre o sin errores. Puede cambiar o dejar de existir; siempre que sea posible, avisaremos antes.",
     "contentTitle": "Lo que escribes",
-    "content": "Eres responsable de lo que escribes en la lista. No uses o que falta para contenido ilegal, ofensivo o engañoso, ni para spam. Podemos eliminar listas que no cumplan estas reglas.",
+    "content": "Eres responsable de lo que escribes en la lista. No uses oquefalta para contenido ilegal, ofensivo o engañoso, ni para spam. Podemos eliminar listas que no cumplan estas reglas.",
     "linksTitle": "Enlaces",
     "links": "Quien tiene el enlace de la lista puede verla y editarla. Cuida dónde compartes el enlace.",
     "paymentsTitle": "Pagos",
-    "payments": "o que falta no recibe ni gestiona pagos, y no vende nada.",
+    "payments": "oquefalta no recibe ni gestiona pagos, y no vende nada.",
     "codeTitle": "Código abierto",
-    "code": "El código de o que falta está bajo la licencia AGPL-3.0.",
+    "code": "El código de oquefalta está bajo la licencia AGPL-3.0.",
     "lawTitle": "Ley aplicable",
     "law": "Estos términos se rigen por las leyes de Brasil."
   }

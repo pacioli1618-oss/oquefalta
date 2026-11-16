@@ -28,7 +28,9 @@ export function Brand({href = '/listas'}: {href?: string}) {
   return (
     <Link href={href} className="brand" aria-label={t('homeLabel')}>
       <LogoMark />
-      <span className="wordmark">o que falta</span>
+      <span className="wordmark">
+        oque<span className="wordmarkAccent">falta</span>
+      </span>
     </Link>
   );
 }
