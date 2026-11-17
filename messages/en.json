@@ -28,6 +28,9 @@
   "LocaleSwitcher": {
     "label": "Language"
   },
+  "ThemeSwitcher": {
+    "label": "Theme: {choice, select, light {light} dark {dark} other {automatic, follows the device}}. Tap to change."
+  },
   "Home": {
     "newList": "New list",
     "shareLater": "Add the first item to create the list's link."

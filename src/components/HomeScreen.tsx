@@ -9,7 +9,7 @@ import {useSavedLists} from '@/lib/use-saved-lists';
 import {ListBody, pickCategory, type AddResult} from './ListBody';
 import {useErrorMessage} from './ListScreen';
 import {Brand, Disclaimers, Icon, paths} from './ui';
-import {LocaleSwitcher} from './LocaleSwitcher';
+import {HeaderControls} from './HeaderControls';
 import {InstallButton} from './InstallButton';
 
 /**
@@ -57,7 +57,7 @@ export function HomeScreen() {
       <div className="header">
         <div className="topbar">
           <Brand />
-          <LocaleSwitcher />
+          <HeaderControls />
         </div>
         <span className="label">{t('newList')}</span>
         <h1 className="title">{defaultName}</h1>

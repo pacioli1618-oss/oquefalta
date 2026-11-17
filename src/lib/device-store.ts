@@ -2,6 +2,8 @@
 // localStorage can be missing or throw (private mode, some in-app browsers), so every
 // access is guarded and falls back to "nothing saved".
 
+import {isThemeChoice, THEME_STORAGE_KEY, type ThemeChoice} from './theme';
+
 export type SavedList = {slug: string; name: string; openedAt: string};
 
 const LISTS_KEY = 'oqfalta:lists';
@@ -70,4 +72,25 @@ export function saveList(slug: string, name: string) {
 
 export function forgetList(slug: string) {
   write(LISTS_KEY, JSON.stringify(getSavedLists().filter((l) => l.slug !== slug)));
+}
+
+// Theme choice (src/lib/theme.ts). Its own key, read before the first paint by the inline script.
+
+export function readThemeChoice(): ThemeChoice {
+  try {
+    const value = window.localStorage.getItem(THEME_STORAGE_KEY);
+    return isThemeChoice(value) ? value : 'auto';
+  } catch {
+    return 'auto';
+  }
+}
+
+/** "auto" removes the key: the device decides again. */
+export function writeThemeChoice(choice: ThemeChoice) {
+  try {
+    if (choice === 'auto') window.localStorage.removeItem(THEME_STORAGE_KEY);
+    else window.localStorage.setItem(THEME_STORAGE_KEY, choice);
+  } catch {
+    // Nothing to do: this browser can't keep the choice, so the device setting stays in charge.
+  }
 }

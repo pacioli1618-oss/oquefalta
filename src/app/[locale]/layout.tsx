@@ -6,6 +6,7 @@ import '@fontsource-variable/inter';
 import '@fontsource-variable/space-grotesk';
 import {ogLocales} from '@/i18n/locales';
 import {routing} from '@/i18n/routing';
+import {themeScript} from '@/lib/theme';
 import '../globals.css';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
@@ -47,7 +48,11 @@ export default async function LocaleLayout({children, params}: LayoutProps<'/[lo
   setRequestLocale(locale);
 
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
+      <head>
+        {/* Sets data-theme before the first paint (src/lib/theme.ts). */}
+        <script dangerouslySetInnerHTML={{__html: themeScript}} />
+      </head>
       <body>
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>

@@ -1,6 +1,6 @@
 /* Tokens: GR1618 Labs base (grafite + cinzas) with the app's own color, tomate. */
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
   --surface: #f3f4f6;
   --card: #ffffff;
   --ink: #0f1115;
@@ -18,8 +18,11 @@
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
+/* Dark theme: <html data-theme="dark">, set by src/lib/theme.ts from the device or the header button.
+   Screen only: paper is always light, so printed pages keep dark text. */
+@media screen {
+  :root[data-theme='dark'] {
+    color-scheme: dark;
     --surface: #0d0f13;
     --card: #161920;
     --ink: #eef0f4;
@@ -209,6 +212,27 @@ a {
 .legalLinks a {
   color: var(--ink-muted);
   padding: 2px 4px;
+}
+
+.headerControls {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.themeSwitcher {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 6px;
+  border: 1px solid var(--border-control);
+  background: var(--card);
+  color: var(--ink-soft);
+  cursor: pointer;
 }
 
 .localeSwitcher {

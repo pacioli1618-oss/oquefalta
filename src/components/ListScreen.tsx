@@ -11,7 +11,7 @@ import {ListBody, pickCategory, useCountLabel, type AddResult} from './ListBody'
 import {RenameSheet} from './RenameSheet';
 import {ShareSheet} from './ShareSheet';
 import {Brand, Disclaimers, Icon, paths} from './ui';
-import {LocaleSwitcher} from './LocaleSwitcher';
+import {HeaderControls} from './HeaderControls';
 import {InstallButton} from './InstallButton';
 
 const KNOWN_ERRORS = ['too_many_items', 'rate_limited', 'list_not_found'] as const;
@@ -43,7 +43,7 @@ export function ListScreen({slug}: {slug: string}) {
         <div className="header">
           <div className="topbar">
             <Brand />
-            <LocaleSwitcher />
+            <HeaderControls />
           </div>
         </div>
         <p className="empty">{t('loading')}</p>
@@ -58,7 +58,7 @@ export function ListScreen({slug}: {slug: string}) {
         <div className="header">
           <div className="topbar">
             <Brand />
-            <LocaleSwitcher />
+            <HeaderControls />
           </div>
         </div>
         <div className="empty">
@@ -115,7 +115,7 @@ export function ListScreen({slug}: {slug: string}) {
         <div className="topbar">
           <Brand />
           <div style={{display: 'flex', alignItems: 'center'}}>
-            <LocaleSwitcher />
+            <HeaderControls />
             <button type="button" className="iconButton" aria-label={t('rename')} onClick={() => setSheet('rename')}>
               <Icon d={paths.pencil} size={21} />
             </button>

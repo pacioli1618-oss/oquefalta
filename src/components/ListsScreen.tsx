@@ -8,7 +8,7 @@ import {getDeviceId, saveList} from '@/lib/device-store';
 import {useSavedLists} from '@/lib/use-saved-lists';
 import {useErrorMessage} from './ListScreen';
 import {Brand, Disclaimers, Icon, paths} from './ui';
-import {LocaleSwitcher} from './LocaleSwitcher';
+import {HeaderControls} from './HeaderControls';
 import {InstallButton} from './InstallButton';
 
 function whenLabel(iso: string, t: ReturnType<typeof useTranslations<'Lists'>>) {
@@ -51,7 +51,7 @@ export function ListsScreen() {
       <div className="header">
         <div className="topbar">
           <Brand href="/" />
-          <LocaleSwitcher />
+          <HeaderControls />
         </div>
         <span className="label">{t('saved', {count})}</span>
         <h1 className="title">{t('title')}</h1>
