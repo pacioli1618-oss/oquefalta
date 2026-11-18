@@ -23,7 +23,8 @@
     "linksLabel": "Sobre o OQueFalta",
     "about": "Sobre",
     "privacy": "Privacidade",
-    "terms": "Termos"
+    "terms": "Termos",
+    "version": "versão {version}"
   },
   "LocaleSwitcher": {
     "label": "Idioma"

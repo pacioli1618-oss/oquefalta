@@ -4,6 +4,7 @@ import {useTranslations} from 'next-intl';
 import {useEffect, useRef, type ReactNode} from 'react';
 import {Link} from '@/i18n/navigation';
 import {iconPath} from '@/lib/icons';
+import {appCommit, appVersion} from '@/lib/app-version';
 
 /** The "o que falta" symbol: a checklist page on a tomato square (logo concept 1). */
 export function LogoMark({size = 28}: {size?: number}) {
@@ -67,7 +68,7 @@ export const paths = {
   install: 'M8.5 2.5h7a2.5 2.5 0 0 1 2.5 2.5v14a2.5 2.5 0 0 1-2.5 2.5h-7A2.5 2.5 0 0 1 6 19V5a2.5 2.5 0 0 1 2.5-2.5ZM12 7v7M9 11l3 3 3-3M11 18.5h2',
 };
 
-/** "Gratuito · Open source · Sem cadastro", the GR1618 Labs endorsement, the legal links and the language. */
+/** "Gratuito · Open source · Sem cadastro", the GR1618 Labs endorsement, the legal links and the app version. */
 export function Disclaimers() {
   const t = useTranslations('Footer');
   return (
@@ -84,6 +85,10 @@ export function Disclaimers() {
         <span aria-hidden="true">·</span>
         <Link href="/termos">{t('terms')}</Link>
       </nav>
+      <p className="appVersion">
+        {t('version', {version: appVersion})}
+        {appCommit && ` · ${appCommit}`}
+      </p>
     </>
   );
 }

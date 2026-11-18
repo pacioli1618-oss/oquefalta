@@ -209,6 +209,15 @@ a {
   color: var(--ink-muted);
 }
 
+.appVersion {
+  margin: 0;
+  text-align: center;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--ink-muted);
+  font-variant-numeric: tabular-nums;
+}
+
 .legalLinks a {
   color: var(--ink-muted);
   padding: 2px 4px;
