@@ -142,7 +142,7 @@
   "Legal": {
     "updatedAt": "Atualizado em {date}",
     "contactTitle": "Contato",
-    "contact": "Dúvidas, pedidos sobre seus dados ou algo errado: <link>{label}</link>."
+    "contact": "Dúvidas, sugestões ou algo errado: deixe um comentário em <link>{label}</link>. Os comentários só aparecem depois de aprovados pelo editor, e pedidos sobre seus dados nunca são publicados."
   },
   "About": {
     "title": "Sobre o OQueFalta",

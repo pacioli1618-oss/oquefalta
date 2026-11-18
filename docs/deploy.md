@@ -19,7 +19,6 @@ Realtime: canais públicos permitidos ("private only" desligado), como no QuemLe
    | `NEXT_PUBLIC_SUPABASE_URL` | `https://uqkyhzvdwynpkqdiuvyn.supabase.co` |
    | `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | a chave publicável (`.env.example`) |
    | `NEXT_PUBLIC_SITE_URL` | opcional: `https://oquefalta.gr1618.io` |
-   | `NEXT_PUBLIC_CONTACT_EMAIL` | opcional: contato nas páginas Sobre, Privacidade e Termos |
 
 3. Região das funções: São Paulo (`gru1`), já definida em `vercel.json`.
 

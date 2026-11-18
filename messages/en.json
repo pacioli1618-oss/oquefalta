@@ -142,7 +142,7 @@
   "Legal": {
     "updatedAt": "Updated {date}",
     "contactTitle": "Contact",
-    "contact": "Questions, requests about your data, or something broken: <link>{label}</link>."
+    "contact": "Questions, suggestions or something wrong: leave a comment at <link>{label}</link>. Comments only appear after the editor approves them, and requests about your data are never published."
   },
   "About": {
     "title": "About OQueFalta",
